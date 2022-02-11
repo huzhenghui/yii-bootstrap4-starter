@@ -1,0 +1,4 @@
+/config/cookieValidationKey.local.php
+/runtime/
+/vendor/
+/.env

@@ -1,6 +1,70 @@
 {
-    "name": "huzhenghui/yii-bootstrap4-starter",
-    "description": "",
-    "require": {
+  "name": "huzhenghui/yii-bootstrap4-starter",
+  "description": "",
+  "type": "project",
+  "authors": [
+    {
+      "name": "胡争辉",
+      "email": "hu@daonao.com"
     }
+  ],
+  "require": {
+    "huzhenghui/yii2-app-basic-files": "0.0.2",
+    "yiisoft/yii2-bootstrap4": "^2.0"
+  },
+  "require-dev": {
+    "composer/composer": "^2.2",
+    "yiisoft/yii2-debug": "~2.1.0",
+    "yiisoft/yii2-gii": "~2.2.0"
+  },
+  "config": {
+    "allow-plugins": {
+      "yiisoft/yii2-composer": true
+    }
+  },
+  "scripts": {
+    "post-update-cmd": [
+      "huzhenghui\\yii\\bootstrap4\\starter\\Installer::postUpdate"
+    ],
+    "post-install-cmd": [
+      "huzhenghui\\yii\\bootstrap4\\starter\\Installer::postInstall"
+    ],
+    "update-command": [
+      "Composer\\Config::disableProcessTimeout",
+      "@composer update"
+    ],
+    "install-command": [
+      "Composer\\Config::disableProcessTimeout",
+      "@composer install"
+    ],
+    "serve": [
+      "Composer\\Config::disableProcessTimeout",
+      "@php yii serve"
+    ],
+    "clear-all": [
+      "/usr/local/opt/trash-cli/bin/trash --force -- ./config/cookieValidationKey.local.php",
+      "/usr/local/opt/trash-cli/bin/trash --force -- ./runtime/",
+      "/usr/local/opt/trash-cli/bin/trash --force -- ./vendor/",
+      "/usr/local/opt/trash-cli/bin/trash --force -- ./web/",
+      "/usr/local/opt/trash-cli/bin/trash --force -- ./composer.lock",
+      "/usr/local/opt/trash-cli/bin/trash --force -- ./yii"
+    ]
+  },
+  "scripts-descriptions": {
+    "update-command": "composer update",
+    "install-command": "composer install",
+    "serve": "php yii serve",
+    "clear-all": "Clear all temporary file"
+  },
+  "autoload": {
+    "psr-4": {
+      "huzhenghui\\yii\\bootstrap4\\starter\\": "src"
+    }
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    }
+  ]
 }
