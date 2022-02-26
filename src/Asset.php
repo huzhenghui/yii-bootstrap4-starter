@@ -10,9 +10,7 @@ use yii\bootstrap4\BootstrapAsset;
 class Asset extends AssetBundle
 {
     public $sourcePath = __DIR__ . '/assets';
-    public $css = [
-        'css/starter-template.css'
-    ];
+    public $css = [];
     public $depends = [
         YiiAsset::class,
         BootstrapAsset::class

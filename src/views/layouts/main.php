@@ -25,9 +25,7 @@ $this->beginPage();
     <?php $this->beginBody() ?>
     <?= StarterNav::widget() ?>
     <main role="main" class="container">
-        <div class="starter-template">
-            <?= $content ?>
-        </div>
+        <?= $content ?>
     </main>
     <?php $this->endBody() ?>
 </body>

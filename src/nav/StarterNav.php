@@ -9,6 +9,10 @@ use yii\bootstrap4\Widget;
 
 class StarterNav extends Widget
 {
+
+    private const NAVBAR_CLASS = 'bg-dark navbar navbar-dark navbar-expand-md sticky-top';
+    private const NAV_CLASS = 'mr-auto navbar-nav';
+
     public function run()
     {
         $navItems = array();
@@ -21,14 +25,14 @@ class StarterNav extends Widget
         }
         NavBar::begin([
             'options' => [
-                'class' => 'navbar-expand-md navbar-dark bg-dark fixed-top'
+                'class' => self::NAVBAR_CLASS
             ],
             'brandLabel' => Yii::$app->name,
             'brandUrl' => Yii::$app->homeUrl,
         ]);
         echo Nav::widget([
             'options' => [
-                'class' => 'navbar-nav'
+                'class' => self::NAV_CLASS
             ],
             'items' => $navItems
         ]);
